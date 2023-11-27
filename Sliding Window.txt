@@ -1,0 +1,84 @@
+LEETCODE PATTERNS
+
+1)Sliding Window Pattern:
+----------------------
+Two types of questions:
+->Fixed size window(Window size is given and we are asked to do something in window)
+->Variable size window(Window size not given. Condition given we are asked to determine size)
+
+Window never breaks. Always think about this pattern only for continuous subarray.
+
+Identification
+->Array or String + Subarray or substring + (condition or size)
+
+Base code(Fixed Size):
+
+i is start of window and j is end of window.
+
+j-i+1 is window size
+
+while(j<size_of_array){
+	//do calculations
+	if (j-i+1 < k)
+		j++;//slide
+	else if (j-i+1 == k){
+		//evaluate condition from calculations
+		//remove calculations you have done for first element in window which is at i index
+		//to maintain window size do
+		i++;
+		j++;
+	}
+}
+
+Models
+->Direct sliding window.(Largest sum in subarrays of size k)
+->Using a queue (First -ve element in window of size k)
+  (When to use a queue? When we are given phrases like first. When we need access of elements in same order we stored them)
+
+Note: Whenever you get an idea that you can maintain first occurence and second occurence and do smth think of a queue instead of your idea.
+
+Problems to revisit:
+1)Count occurences of anagrams
+2)Sliding window maximum
+3)Grumpy book store owner
+
+Part B: Variable size Sliding Window
+-> In fixed size we had size of window and sum was to be maximised.We knew how to move the window.
+-> In variable size we have the sum but window size is to be maximised.Here window is moved acc. to condn.
+
+Base Code(Variable Size):
+
+while(j<size){
+	calculations
+	if (condn < k)
+		j++;
+	else if (condn == k){
+		ans store
+		j++;
+	}
+	else if (condn > k){
+		while(condn > k){
+			remove calculations
+			i++
+		}
+		j++
+	}
+}
+
+Problems to revisit:
+1)Fruit into Baskets
+2)Longest substring without repeating characters
+3)Minimum Window substring
+4)Longest Repeating character replacement (Uses a formula also)
+5)Subarray product less than k
+6)Freqeuncy of most frequent element (Uses a formula also)
+
+
+Important deductions:
+
+In fixed size window we arrive at window size first and maintain that window size.
+In variable size we arrive at out condition first. For example in question 2) in problems to revisit we first find a window which has no repeating characters. Then we calculate length and we try to maintain same condition within window i.e we try to have no repeating characters in every window we form further.
+
+Check if usage of map is required.
+
+Sometimes calculations are done at the end of the loop. Check for them also.

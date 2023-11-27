@@ -1,0 +1,71 @@
+Binary Search
+-------------
+
+Identification:
+---------------
+
+->If a sorted array is given first thought should be of binary search
+->Even in unsorted we can apply binary search in rotated sorted cases etc.
+
+Binary Search on Answer concept
+-------------------------------
+
+Binary Search can also be applied on unsorted arrays.In this since its not sorted we check if mid is the element we are looking for. But we need to develop a criteria to choose one side if mid isnt the answer we are looking for.
+
+Examples:
+1) Peak element
+2) Single element in a sorted array
+3) K closest elements in a sorted array
+4) Kth Missing Positive number
+
+Main Goal to apply Binary Search:
+---------------------------------
+
+1) Identifying the element we need and establishing a condition to identify that element.
+                 In direct BS if arr[mid]==ele is condition
+                 In rotated sorted array min question if mid element is smaller than both its neighbours thats the condition
+2) How to eliminate one half. Derive condition to eliminate one half of array. Either before mid or after mid.
+
+We search for an element. To identify the element we derive a condition. If mid isnt the element we are looking for then we need to move to one half to persue binary search algorithm. To identify which half to move to we need to derive another condition.
+
+Imp patterns:
+-------------
+
+-> Rotated Sorted Array : The min element is index about which array is rotated. In other words its the pivot element.
+                         The min element gives no of times array is rotated.
+                         The subarrays on both sides of min element are sorted.
+                         So minimum element in a rotated sorted array plays a crucial role.
+-> Ceiling and Floor : Smallest value larger than x or largest value smaller than x in a sorted array.
+
+
+Questions to relook at:
+-----------------------
+1) How many times sorted array is rotated
+2) Minimum Difference element in a sorted array
+
+Staircase Search Algorithm
+---------------------------
+3) Search in a row-column sorted Matrix (Staircase Search algorithm)
+4) Count Negative Numbers in a Sorted Matrix
+
+
+5) Search a 2D Matrix
+Important to understand difference between 3 and 4 questions and why we cant use same code for both.
+
+6) Allocate Minimum number of Pages(Very Important)
+
+7) Aggressive cow (spoj)
+8) Prata and roti (spoj)
+9) EKO (spoj)
+10) Google kickstart A Q-3 2020
+
+1482 Minimum Number of Days to Make m Bouquets
+1283 Find the Smallest Divisor Given a Threshold
+1231 Divide Chocolate
+1011 Capacity To Ship Packages In N Days
+875 Koko Eating Bananas
+Minimize 
+774 Max Distance to Gas Station
+410 Split Array Largest Sum
+
+->Minimum Operations to make Array equal.
