@@ -1,0 +1,73 @@
+Binary Search
+-------------
+
+Basic Identification:
+1) Array is sorted or hint of sorted array such as rotated sorted etc.
+2) Binary Search on Answer. Array need not be sorted.
+3) Staircase Search algorithm. Both rows and columns of 2-D matrix are sorted.
+
+Important deductions:
+---------------------
+-> In a rotated sorted array we know how to find the min element(element which had index 0 previously).From min element we can find number of times array is sorted.
+-> In any general BS problem we first check if mid element is the element we want(answer). If it isn't we have to choose one side about mid and do the same procedure.We choose a side depending on certain conditions we derive. 
+   So to check if mid is answer we need a statement. 
+	       if it isnt answer to choose one side we need another statement.
+-> About rotated sorted array subarrays on either side of min element are sorted.
+-> To go to left element from 0th element we use [mid+(n-1)]%n; 
+-> To go to right element from last element we use [mid+1]%n;
+-> Floor and Ceil of an element.( Smallest element larger and largest element smaller than an element) . They represent closest elements to a particular element.
+-> Think of using Staircase Search algo if both rows and columns of 2-D matrix are sorted.
+
+Basic Binary Search Problems:
+----------------------------
+1) How many times sorted array is rotated
+2) Minimum Difference element in a sorted array
+3) Peak element
+4) Single element in a sorted array
+5) Kth Missing Positive number
+
+Staircase Search Questions
+--------------------------
+1) Search in a row-column sorted Matrix (Staircase Search algorithm)
+2) Count Negative Numbers in a Sorted Matrix
+
+
+3) Search a 2D Matrix
+Important to understand difference between 1 and 3 questions and why we cant use same code for both.
+
+
+Binary Search on Answer and other tricky questions:
+--------------------------------------------------
+-> We are given a threshold saying to do these many things find minimum or maximum of something. 
+   Search for 2 things: Minimum of maximum , maximum of minimum , minimum along with a threshold (M students , M bouquets , M cows , M painters)
+-> In all such questions we do something like : We say whatever we found as mid as answer and if the threshold is satisfied for such thing we store it and look for a better answer.
+
+General Structure:
+-----------------
+int start=0 or max_of _array usually
+int end=max_of_array or sum_of_all_element_of_array usually
+while(start <= end){
+	int mid=start+(end-start)/2;
+	if (isPossible(array,threshold,mid)){
+		store ans;
+		depending on min or max move to one direction.
+	}
+	else
+		move to other direction.
+}
+bool isPossible(array,threshold,mid){
+	//changes depending on condition.
+	//do something and compare threshold with calculated value to acheive answer as mid.
+	//return true or false;
+}
+BS on Answer Questions
+----------------------
+1) Allocate minimum number of pages
+2) Minimum Number of Days to Make m Bouquets
+3) Find the Smallest Divisor Given a Threshold
+4) Capacity To Ship Packages In N Days
+5) Koko Eating Bananas
+6) Aggressive Cows
+7) Painter's Partition
+
+	
